@@ -1,9 +1,22 @@
-var getGuess = prompt("Pick a number between 1 and 5.");
-var number = 3
+var magicNumber = 0;
+var missedGuesses = 0;
 
-if (getGuess === number){
-    console.log("You guessed correctly!");
+//Compares magicNumber to the guessed number.
+function compareGuess (num){
+    if (num === magicNumber){
+        console.log("correct");
+        console.log("You guessed wrong: " + missedGuesses + " times.");
+    }
+    else {
+        console.log("wrong");
+        missedGuesses++;
+    }
 }
-else {
-    console.log("You guessed poorly.");
+
+//Generates a randomNumber stored in magicNumber.
+function randomNumber (max, min){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    magicNumber = Math.floor(Math.random()* (max - min + 1) * min);
+    console.log(magicNumber);
 }
