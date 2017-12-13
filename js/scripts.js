@@ -1,17 +1,19 @@
 var magicNumber = 0;
 var missedGuesses = 0;
-
+var toggle = false;
 var guessingGame = {
 
     //compares magicNumber to Guessed Number
     playerGuess: function(num){
         if (num === magicNumber){
-            console.log("correct");
+            toggle = true;
+            view.feedbackDisplay();
             console.log("You guessed wrong: " + missedGuesses + " times.");
         }
         else {
-            console.log("wrong");
+            toggle = false;
             missedGuesses++;
+            view.feedbackDisplay();
         }
     },
 
@@ -26,7 +28,7 @@ var guessingGame = {
 
 
 var handlers = {
-    
+
     guessButton: function(){
         //Pulls Guessed Number from Input
         var guessNum = document.getElementById("guess");
@@ -43,3 +45,29 @@ var handlers = {
         minNumber.value = "";
     }
 }
+
+var view = {
+    feedbackDisplay: function(){
+        var display = document.getElementById("display");
+        if (toggle === true){
+            display.textContent = "Correct"
+            console.log(display);
+        }
+        else {
+            display.textContent = "Wrong"
+        }
+        console.log(display);
+    }
+}
+
+
+//if (num === magicnumber){
+//    //set toggle to true
+//    toggle = true;
+//}
+//else {
+//    //set toggle to false
+//    toggle = false;
+//    //increase missedGuesses++
+//    missedGuesses++;
+//}

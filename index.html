@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Number Guessing Game</title>
         <meta name="description" content="DESCRIPTION">
+
+        <!-- Google Font: Roboto -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+        <!-- Custom CSS -->
         <link rel="stylesheet" href="css/styles.css">
 
         <!--[if lt IE 9]>
@@ -13,18 +18,26 @@
     </head>
 
     <body>
-        <h1>Number Guessing Game</h1>
+        <h1 class="gameTitle">Number Guessing Game</h1>
 
-        <div>
-            <button placeholder="Insert Guess Here" onclick="handlers.guessButton()">Insert Guess</button>
-            <input id="guess" type="number"/>
-        </div>
-
-        <div>
+        <div class="randomGen">
             <button id="randomGenButton" onclick="handlers.randomGenButton()">Random Generator</button>
             <input id="maxNumber" placeholder="Max Number" type="number" />
             <input id="minNumber" placeholder="Min Number" type="number" />
         </div>
+
+        <div class="guessInput">
+            <input id="guess" type="number" placeholder="Place Guess Here" />
+            <button placeholder="Insert Guess Here" onclick="handlers.guessButton()">Insert Guess</button>
+        </div>
+
+        <div class="feedback">
+            <p id="display" class="feedbackDisplay">
+                
+            </p>
+        </div>
+
+
 
 
         <!-- JavaScript -->
