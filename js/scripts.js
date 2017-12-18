@@ -1,6 +1,8 @@
 var magicNumber = 0;
 var missedGuesses = 0;
 var toggle = false;
+
+
 var guessingGame = {
 
     //compares magicNumber to Guessed Number
@@ -8,20 +10,21 @@ var guessingGame = {
         if (num === magicNumber){
             toggle = true;
             view.feedbackDisplay();
-            console.log("You guessed wrong: " + missedGuesses + " times.");
         }
         else {
             toggle = false;
             missedGuesses++;
             view.feedbackDisplay();
         }
+        view.statsDisplay();
     },
 
     //Creates a random guess between two values stored as magicNumber
     randomNumber: function(max, min){
         min = Math.ceil(min);
         max = Math.floor(max);
-        magicNumber = Math.floor(Math.random()* (max - min + 1) * min);
+        magicNumber = Math.floor(Math.random() * (max - min + 1) + min);
+        view.numDisplayMessage();
         console.log(magicNumber);
     }
 }
@@ -46,28 +49,28 @@ var handlers = {
     }
 }
 
+
 var view = {
     feedbackDisplay: function(){
         var display = document.getElementById("display");
+        //Sets Display when answer is guessed correctly
         if (toggle === true){
             display.textContent = "Correct"
-            console.log(display);
         }
+        //Sets Display when guessed incorrectly
         else {
             display.textContent = "Wrong"
         }
-        console.log(display);
+    },
+    //Creates updated counter of missed guesses
+    statsDisplay: function (){
+        var counterDisplay = document.getElementById("counterDisplay");
+        counterDisplay.textContent = missedGuesses;
+    },
+
+    //Displays a message when the number has been chosen to try to guess
+    numDisplayMessage: function (){
+        var readyPlayDisplay = document.getElementById("readyPlayDisplay");
+        readyPlayDisplay.textContent = "You can start guessing now!";
     }
 }
-
-
-//if (num === magicnumber){
-//    //set toggle to true
-//    toggle = true;
-//}
-//else {
-//    //set toggle to false
-//    toggle = false;
-//    //increase missedGuesses++
-//    missedGuesses++;
-//}

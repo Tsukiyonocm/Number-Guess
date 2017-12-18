@@ -29,6 +29,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+div.gameBoard {
+    border: 1px solid black;
+}
 
 h1 {
     margin: 0 auto;
@@ -64,6 +67,13 @@ div.feedback {
 div p {
     margin-top: 2rem;
     padding: 1rem;
-    border: 1px solid black;
-    display: inline-block;
+    display: block;
+}
+
+
+/* Custom Grid */
+.row {
+    max-width: 114rem;
+    margin: 0 auto;
+    margin-bottom: 8rem;
 }

@@ -18,24 +18,36 @@
     </head>
 
     <body>
-        <h1 class="gameTitle">Number Guessing Game</h1>
+        <div class="gameBoard">
+            <h1 class="gameTitle">Number Guessing Game</h1>
 
-        <div class="randomGen">
-            <button id="randomGenButton" onclick="handlers.randomGenButton()">Random Generator</button>
-            <input id="maxNumber" placeholder="Max Number" type="number" />
-            <input id="minNumber" placeholder="Min Number" type="number" />
+            <div class="randomGen">
+                <button id="randomGenButton" onclick="handlers.randomGenButton()">Random Generator</button>
+                <input id="minNumber" placeholder="Min Number" type="number" />
+                <input id="maxNumber" placeholder="Max Number" type="number" />
+                <p id="readyPlayDisplay">
+
+                </p>
+            </div>
+
+            <div class="guessInput">
+                <input id="guess" type="number" placeholder="Place Guess Here" />
+                <button placeholder="Insert Guess Here" onclick="handlers.guessButton()">Insert Guess</button>
+            </div>
+
         </div>
 
-        <div class="guessInput">
-            <input id="guess" type="number" placeholder="Place Guess Here" />
-            <button placeholder="Insert Guess Here" onclick="handlers.guessButton()">Insert Guess</button>
+        <div class="statistics">
+            <div class="feedback">
+                <p id="display">
+                    
+                </p>
+                <p id="statsDisplay">
+                    Total Missed Guesses: <span id="counterDisplay">0</span>
+                </p>
+            </div>
         </div>
 
-        <div class="feedback">
-            <p id="display" class="feedbackDisplay">
-                
-            </p>
-        </div>
 
 
 
