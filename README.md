@@ -42,7 +42,7 @@ Itemized Update List:
 
 7. I need to create verification systems for the current (and future) buttons that will only allow access to features once certain conditions have been met. For instance, currently I should only be able to enter a guess once a random number has been generated. If the number has not been created, the guess should be unusable or pop up an error message.
 
-
+----
 ### Steps towards creating this project.
 
 #### Step 1:
