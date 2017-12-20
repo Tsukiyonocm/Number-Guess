@@ -37,7 +37,8 @@ Itemized Update List:
    pulled from the difficulty setting that the players choose. I believe this will be quite difficult to setup (for my skill level) and 
    will probably need to do some refactoring all over the code to get it working properly.
 
-This will also need to probably worked alongside the more in-depth CSS features as it will change the whole layout of the current display. I will likely need to break this step down further once I get to working it into the web app.
+   This will also need to probably worked alongside the more in-depth CSS features as it will change the whole layout of the current   
+   display. I will likely need to break this step down further once I get to working it into the web app.
 
 7. I need to create verification systems for the current (and future) buttons that will only allow access to features once certain conditions have been met. For instance, currently I should only be able to enter a guess once a random number has been generated. If the number has not been created, the guess should be unusable or pop up an error message.
 
