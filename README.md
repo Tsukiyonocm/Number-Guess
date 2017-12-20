@@ -33,7 +33,8 @@ Itemized Update List:
 ..2. Mid: 1 to 100
 ..3. Hard: 1 to 1000
 
-... This will deprecate the old system and allow me to pull that feature out of the current version of the page. The numbers will be ... pulled from the difficulty setting that the players choose. I believe this will be quite difficult to setup (for my skill level) and ... will probably need to do some refactoring all over the code to get it working properly.
+...This will deprecate the old system and allow me to pull that feature out of the current version of the page. The numbers will be 
+...pulled from the difficulty setting that the players choose. I believe this will be quite difficult to setup (for my skill level) and ...will probably need to do some refactoring all over the code to get it working properly.
 
 This will also need to probably worked alongside the more in-depth CSS features as it will change the whole layout of the current display. I will likely need to break this step down further once I get to working it into the web app.
 
