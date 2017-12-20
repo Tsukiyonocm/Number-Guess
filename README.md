@@ -29,13 +29,13 @@ Itemized Update List:
 5. There will be a message window for the game to make fun of the user or make various sarcastic remarks. Just something sort of fun to add to this. This can be tied to the difficulty level in addition to the number of missed guesses
 
 6. Mega Feature: The random number generator that is currently in use will need a complete revamp. I want the game to start with a popup modal (if possible) in order for the player to choose a difficulty on game start. There will be 3 possible difficulties:
-  1. Easy: 1 to 10
-  2. Mid: 1 to 100
-  3. Hard: 1 to 1000
+  *. Easy: 1 to 10
+  *. Mid: 1 to 100
+  *. Hard: 1 to 1000
 
-  This will deprecate the old system and allow me to pull that feature out of the current version of the page. The numbers will be 
-  pulled from the difficulty setting that the players choose. I believe this will be quite difficult to setup (for my skill level) and 
-  will probably need to do some refactoring all over the code to get it working properly.
+   This will deprecate the old system and allow me to pull that feature out of the current version of the page. The numbers will be 
+   pulled from the difficulty setting that the players choose. I believe this will be quite difficult to setup (for my skill level) and 
+   will probably need to do some refactoring all over the code to get it working properly.
 
 This will also need to probably worked alongside the more in-depth CSS features as it will change the whole layout of the current display. I will likely need to break this step down further once I get to working it into the web app.
 
