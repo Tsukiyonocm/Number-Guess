@@ -21,9 +21,9 @@ var guessingGame = {
 
     //Creates a random guess between two values stored as magicNumber
     randomNumber: function(max, min){
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        magicNumber = Math.floor(Math.random() * (max - min + 1) + min);
+        var low = Math.ceil(min);
+        var high = Math.floor(max);
+        magicNumber = Math.floor(Math.random() * (high - low + 1) + low);
         view.numDisplayMessage();
         console.log(magicNumber);
     }
@@ -39,13 +39,12 @@ var handlers = {
         guess.value = "";
     },
 
-    randomGenButton: function(){
-        //Sets Max and Min Values for Guessing Game
-        var maxNumber = document.getElementById("maxNumber");
-        var minNumber = document.getElementById("minNumber");
-        guessingGame.randomNumber(maxNumber.valueAsNumber, minNumber.valueAsNumber);
-        maxNumber.value = "";
-        minNumber.value = "";
+    gameDifficulty: function(){
+        var easyLevel = document.getElementById("easyLevel").value
+        //Sets the number range based on difficulty level chosen
+        if (easyLevel === "Easy"){
+            guessingGame.randomNumber(10,1);
+        }
     }
 }
 
@@ -62,6 +61,7 @@ var view = {
             display.textContent = "Wrong"
         }
     },
+
     //Creates updated counter of missed guesses
     statsDisplay: function (){
         var counterDisplay = document.getElementById("counterDisplay");
@@ -74,3 +74,13 @@ var view = {
         readyPlayDisplay.textContent = "You can start guessing now!";
     }
 }
+
+
+//randomGenButton: function(){
+//    //Sets Max and Min Values for Guessing Game
+//    var maxNumber = document.getElementById("maxNumber");
+//    var minNumber = document.getElementById("minNumber");
+//    guessingGame.randomNumber(maxNumber.valueAsNumber, minNumber.valueAsNumber);
+//    maxNumber.value = "";
+//    minNumber.value = "";
+//},
