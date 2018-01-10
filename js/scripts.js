@@ -58,6 +58,7 @@ var handlers = {
             else if (event.target.className === "hard") {
                 guessingGame.randomNumber(1000,1);
                 gameModal.style.display = "none";
+                console.log("hard difficulty");
             }
 
             else {
