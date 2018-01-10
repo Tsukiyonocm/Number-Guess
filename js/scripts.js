@@ -39,12 +39,32 @@ var handlers = {
         guess.value = "";
     },
 
+    //This will be changing soon, about to be completly revamped
     gameDifficulty: function(){
-        var easyLevel = document.getElementById("easyLevel").value
-        //Sets the number range based on difficulty level chosen
-        if (easyLevel === "Easy"){
-            guessingGame.randomNumber(10,1);
-        }
+        var gameModal = document.getElementById("gameModal");
+        gameModal.style.display = "block";
+
+        gameModal.addEventListener("click", function(event){
+            if (event.target.className === "easy"){
+                guessingGame.randomNumber(10,1);
+                gameModal.style.display = "none";
+            }
+
+            else if (event.target.className === "normal"){
+                guessingGame.randomNumber(100,1);
+                gameModal.style.display = "none";
+            }
+
+            else if (event.target.className === "hard") {
+                guessingGame.randomNumber(1000,1);
+                gameModal.style.display = "none";
+            }
+
+            else {
+                //Add in feedback for this later
+                console.log("please try again")
+            }
+        })
     }
 }
 
@@ -74,13 +94,3 @@ var view = {
         readyPlayDisplay.textContent = "You can start guessing now!";
     }
 }
-
-
-//randomGenButton: function(){
-//    //Sets Max and Min Values for Guessing Game
-//    var maxNumber = document.getElementById("maxNumber");
-//    var minNumber = document.getElementById("minNumber");
-//    guessingGame.randomNumber(maxNumber.valueAsNumber, minNumber.valueAsNumber);
-//    maxNumber.value = "";
-//    minNumber.value = "";
-//},

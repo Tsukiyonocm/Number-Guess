@@ -23,15 +23,11 @@
 
             <div class="randomGen">
 
-                <form id="gameDifficulty">
+                <div id="gameDifficulty">
                     <div>
-                        <input type="radio" id="easyLevel" name="difficulty" value="Easy" />
-                        <label for="easyLevel">Easy</label>
+                        <button onclick="handlers.gameDifficulty()">Choose Difficulty</button>
                     </div>
-                    <div>
-                        <input type="submit" onclick="handlers.gameDifficulty()" />
-                    </div>
-                </form>
+                </div>
 
                 <p id="readyPlayDisplay">
 
@@ -40,7 +36,7 @@
 
             <div class="guessInput">
                 <input id="guess" type="number" placeholder="Place Guess Here" />
-                <button placeholder="Insert Guess Here" onclick="handlers.guessButton()">Insert Guess</button>
+                <button onclick="handlers.guessButton()">Insert Guess</button>
             </div>
 
         </div>
@@ -57,8 +53,33 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal">
+        <div id="gameModal" class="modal">
+            <div class="easy">
+                <p>
+                    Easy Difficulty
+                </p>
+                <p>
+                    1 to 10
+                </p>
+            </div>
 
+            <div class="normal">
+                <p>
+                    Normal Difficulty
+                </p>
+                <p>
+                    1 to 100
+                </p>
+            </div>
+
+            <div class="hard">
+                <p>
+                    Hard Difficulty
+                </p>
+                <p>
+                    1 to 1000
+                </p>
+            </div>
         </div>
 
 
