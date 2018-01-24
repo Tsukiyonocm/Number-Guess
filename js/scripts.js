@@ -1,9 +1,18 @@
+window.onload = function(){
+    guessingGame.init();
+}
+
 var magicNumber = 0;
 var missedGuesses = 0;
 var toggle = false;
 
 
 var guessingGame = {
+
+    //Loads everything needed for page load
+    init: function(){
+        view.gameDifficultyMessage();
+    },
 
     //compares magicNumber to Guessed Number
     playerGuess: function(num){
@@ -24,7 +33,7 @@ var guessingGame = {
         var low = Math.ceil(min);
         var high = Math.floor(max);
         magicNumber = Math.floor(Math.random() * (high - low + 1) + low);
-        view.numDisplayMessage();
+        view.gameDifficultyMessage();
         console.log(magicNumber);
     }
 }
@@ -39,31 +48,35 @@ var handlers = {
         guess.value = "";
     },
 
-    //This will be changing soon, about to be completly revamped
+    //Takes input from Modal and updates game mode variables
     gameDifficulty: function(){
         var gameModal = document.getElementById("gameModal");
         gameModal.style.display = "block";
 
-        gameModal.addEventListener("click", function(event){
+        gameModal.addEventListener("click", function difficulty(event){
             if (event.target.className === "easy"){
                 guessingGame.randomNumber(10,1);
                 gameModal.style.display = "none";
+                gameModal.removeEventListener("click", difficulty);
             }
 
             else if (event.target.className === "normal"){
                 guessingGame.randomNumber(100,1);
                 gameModal.style.display = "none";
+                gameModal.removeEventListener("click", difficulty);
             }
 
             else if (event.target.className === "hard") {
                 guessingGame.randomNumber(1000,1);
                 gameModal.style.display = "none";
-                console.log("hard difficulty");
+                gameModal.removeEventListener("click", difficulty);
             }
 
             else {
                 //Add in feedback for this later
                 console.log("please try again")
+                gameModal.style.display = "none";
+                gameModal.removeEventListener("click", difficulty);
             }
         })
     }
@@ -89,9 +102,24 @@ var view = {
         counterDisplay.textContent = missedGuesses;
     },
 
-    //Displays a message when the number has been chosen to try to guess
-    numDisplayMessage: function (){
+    //Display Message to choose Difficulty level
+    gameDifficultyMessage: function(){
+        var gameDifficultyMessage = document.querySelector(".gameDifficultyMessage");
         var readyPlayDisplay = document.getElementById("readyPlayDisplay");
-        readyPlayDisplay.textContent = "You can start guessing now!";
+        //locks and unlocks inputs
+        var guessUnlock = document.getElementById("guess");
+        var guessBtnUnlock = document.querySelector(".guessInputBtn");
+
+        if (magicNumber === 0){
+            gameDifficultyMessage.style.display = "block";
+            guessUnlock.disabled = true;
+            guessBtnUnlock.disabled = true;
+        }
+        else {
+            gameDifficultyMessage.style.display = "none";
+            readyPlayDisplay.textContent = "You can start guessing now!";
+            guessUnlock.disabled = false;
+            guessBtnUnlock.disabled = false;
+        }
     }
 }

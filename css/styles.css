@@ -70,6 +70,12 @@ div p {
     display: block;
 }
 
+.gameDifficultyMessage {
+    color: red;
+    text-transform: uppercase;
+    display: none;
+}
+
 
 /* Custom Grid */
 .row {
