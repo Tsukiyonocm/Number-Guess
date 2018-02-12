@@ -1,5 +1,8 @@
 # Vanilla JS Number Guess Game
 
+##Update 1.2 2/12/2018
+Added in a Reset button for now which will reset the game to the beginning in order for the player to restart after done or "giving up". I still intend on adding in a "Give Up" button in order to give up once a match has started. This will take a bit more work though in order to implement. 
+
 ## Update 1.1 1/24/2018
 For the most part the modal JavaScript features have been implemented. I don't have the styling done to make the modal look nice as of yet, but the modal is working correctly using the three difficulty settings. The CSS I shall be working on over time as I am working on a separate project for that also.
 
@@ -34,8 +37,6 @@ Itemized Update List:
 
 5. There will be a message window for the game to make fun of the user or make various sarcastic remarks. Just something sort of fun to add to this. This can be tied to the difficulty level in addition to the number of missed guesses
 
-6. I need to create verification systems for the current (and future) buttons that will only allow access to features once certain conditions have been met. For instance, currently I should only be able to enter a guess once a random number has been generated. If the number has not been created, the guess should be unusable or pop up an error message.
-
 #### JS Work: Completed
 1. Mega Feature: The random number generator that is currently in use will need a complete revamp. I want the game to start with a popup modal (if possible) in order for the player to choose a difficulty on game start. There will be 3 possible difficulties:
    * Easy: 1 to 10
@@ -48,3 +49,5 @@ Itemized Update List:
 
    This will also need to probably worked alongside the more in-depth CSS features as it will change the whole layout of the   
    current display. I will likely need to break this step down further once I get to working it into the web app.
+
+2. I need to create verification systems for the current (and future) buttons that will only allow access to features once certain conditions have been met. For instance, currently I should only be able to enter a guess once a random number has been generated. If the number has not been created, the guess should be unusable or pop up an error message.
