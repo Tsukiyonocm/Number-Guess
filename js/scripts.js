@@ -79,6 +79,12 @@ var handlers = {
                 gameModal.removeEventListener("click", difficulty);
             }
         })
+    },
+
+    //Resets Game
+    reset: function(){
+        magicNumber = 0;
+        view.gameDifficultyMessage();
     }
 }
 

@@ -52,11 +52,15 @@ div.randomGen {
     width: 20rem;
 }
 
-.guessInput button {
+.guessInput button,
+.reset button {
     margin: 0 auto;
     width: 20rem;
     display: block;
+}
 
+.reset {
+    margin: 4rem;
 }
 
 div.feedback {
